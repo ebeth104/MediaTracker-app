@@ -1,0 +1,25 @@
+{% extends "account/account_base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block main %}
+
+    <h1>Welcome {{ username }}</h1> 
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <a href="/watchlist">
+                <h2>Watchlist</h2>
+                <img src='static/img/img1.png' class="dash-icons" alt="watchlist-icon">
+            </a>
+        </div>
+
+    <div class="col-md-6">
+        <a href="/watched">
+            <h2>Watched</h2>
+            <img src='static/img/img2.png' class="dash-icons" alt="watched-icon">
+        </a>
+    </div>
+
+
+{% endblock %}

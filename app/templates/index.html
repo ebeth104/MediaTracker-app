@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+
+    <h2>Trending this week</h2>
+    <section>
+        <div class="container">
+            <div class="row col-sm">
+                {% for element in trending_now %}
+                    <div class="element-card">
+                        <img src="https://image.tmdb.org/t/p/original/{{element.poster_path}}" alt="posters" class="movie-poster">
+                        {% if not element.title %}
+                        <p class="title">{{element.name}}</p>
+                        {% else %}
+                        <p class="title">{{element.title}}</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

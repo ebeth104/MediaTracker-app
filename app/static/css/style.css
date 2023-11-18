@@ -1,0 +1,54 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-stretch: expanded;
+}
+
+h1{
+    text-align: center;
+    background: #facf5a;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+h2{
+    padding: 15px;
+    margin-left: 1.5em;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+
+img {
+    display: block;
+    margin: auto;
+    max-width: 270px;
+}
+
+.movie-poster{
+    padding-left: 10px;
+    max-width: 250px;
+}
+
+
+.title{
+    font-size: 1.5em;
+    text-align: center;
+    max-width: 250px;
+}
+
+.btn{
+    padding: 10px 15px;
+    margin: 5px;
+}
+
+.form-signin{
+    margin: 1.5em;
+}
+
+.form-signin-heading{
+    text-align: center;
+}
+

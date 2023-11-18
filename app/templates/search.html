@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block main %}
+
+    <h2>Search results for {{ title }}</h2>
+    <section>
+        <h3><h3> Found {{ m_results| count }} matches in movies</h3></h3>
+            <div class="container">
+                <div class="row">
+                    {% for element in m_results %}
+                        <div class="element-card">
+                            <img src="https://image.tmdb.org/t/p/original/{{element.poster_path}}" alt="{{ element.title }}" class="movie-poster">
+                            {% if not element.title %}
+                                <p class="title">{{element.name}}</p>
+                                {% else %}
+                                <p class="title">{{element.title}}</p>
+                            {% endif %}
+                            <a href={{ url_for('add_to_watchlist', item_id=element.id, item_type='movie') }} class="btn btn-warning mb-3 ml-3">Add to watchlist</a>
+                            <a href={{ url_for('add_to_watched', item_id=element.id, item_type='movie') }} class="btn btn-info mb-3">Add to watched</a>
+                        </div>   
+                    {% endfor %}
+                </div>
+            </div>
+
+        <h3><h3> Found {{ tv_results| count }} matches in TV</h3></h3>
+            <div class="container">
+                <div class="row">
+                    {% for element in tv_results %}
+                        <div class="element-card">
+                            <img src="https://image.tmdb.org/t/p/original/{{element.poster_path}}" alt="{{ element.title }}" class="movie-poster">
+                            {% if not element.title %}
+                                <p class="title">{{element.name}}</p>
+                                {% else %}
+                                <p class="title">{{element.title}}</p>
+                            {% endif %}
+                            <a href={{ url_for('add_to_watchlist', item_id=element.id, item_type='tv') }} class="btn btn-warning mb-3 ml-3">Add to watchlist</a>
+                            <a href={{ url_for('add_to_watched', item_id=element.id, item_type='tv') }} class="btn btn-info mb-3">Add to watched</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </section>
+
+{% endblock %}

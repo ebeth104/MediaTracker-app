@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %} TV {% endblock %}
+
+{% block main %} 
+
+    <h1>Television</h1>
+    <h2>Currently popular</h2>
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for element in popular_tv %}
+                    <div class="element-card">
+                        <img src="https://image.tmdb.org/t/p/original/{{element.poster_path}}" alt="posters" class="movie-poster">
+                        <p class="title">{{element.name}}</p>
+                        <a href={{ url_for('add_to_watchlist', item_id=element.id, item_type='tv') }} class="btn btn-warning mb-3 ml-3">Add to watchlist</a>
+                        <a href={{ url_for('add_to_watched', item_id=element.id, item_type='tv') }} class="btn btn-info mb-3">Add to watched</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <h2>Top Rated</h2>
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for element in top_rating %}
+                    <div class="element-card">
+                        <img src="https://image.tmdb.org/t/p/original/{{element.poster_path}}" alt="posters" class="movie-poster">
+                        <p class = "title">{{element.name}}</p>
+                        <a href={{ url_for('add_to_watchlist', item_id=element.id, item_type='tv') }} class="btn btn-warning mb-3 ml-3">Add to watchlist</a>
+                        <a href={{ url_for('add_to_watched', item_id=element.id, item_type='tv') }} class="btn btn-info mb-3">Add to watched</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    <h2>Airing now</h2>
+    <section>
+        <div class="container">
+            <div class="row">
+                {% for element in on_the_air %}
+                    <div class="element-card">
+                        <img src="https://image.tmdb.org/t/p/original/{{element.poster_path}}" alt="posters" class="movie-poster">
+                        <p class = "title">{{element.name}}</p>
+                        <a href={{ url_for('add_to_watchlist', item_id=element.id, item_type='tv') }} class="btn btn-warning mb-3 ml-3">Add to watchlist</a>
+                        <a href={{ url_for('add_to_watched', item_id=element.id, item_type='tv') }} class="btn btn-info mb-3">Add to watched</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

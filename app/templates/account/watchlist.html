@@ -1,0 +1,21 @@
+{% extends "account/account_base.html" %}
+
+{% block title %} Watchlist {% endblock %}
+
+{% block main %}
+
+    <h2>My watchlist</h2>
+    <div class="container">
+        <div class="row">
+            {% for element in watchlist_items %}
+            <div class="element-card">
+                <img src="https://image.tmdb.org/t/p/original/{{element.poster}}" alt="posters" class="movie-poster">
+                <p class="title">{{element.title}}</p>
+                <a href={{ url_for('add_to_watched', item_id=element.item_id, item_type='watchlist')}} class="btn btn-success mb-3 ml-3">Move to Watched</a>
+                <a href={{ url_for('remove_from_watchlist', item_id=element.item_id) }} class="btn btn-danger mb-3">Remove</a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}

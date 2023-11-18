@@ -1,0 +1,18 @@
+{% extends 'account/account_base.html' %}
+
+{% block title %} Reviews {% endblock %}
+
+{% block content %}
+    <h2>Your Reviews</h2>
+
+        {% for review in user_reviews %}
+                <p class="title">Title: {{ review.title }}</p>
+                <img src="https://image.tmdb.org/t/p/original/{{review.poster}}" alt="posters" class="movie-poster">
+            </div>
+                <p>Review: {{ review.reviews }}</p>
+                <p>Notes: {{ review.notes }}</p>
+                <button class="btn btn-primary"><a href="{{ url_for('update_review', review_id=review.id) }}">Update Review</a></button>
+            </div>
+        {% endfor %}
+
+{% endblock %}

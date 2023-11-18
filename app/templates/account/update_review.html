@@ -1,0 +1,19 @@
+{% extends 'account/account_base.html' %}
+
+{% block content %}
+
+    <h2>Update Review</h2>
+
+    <form method="POST" action="{{ url_for('update_review', review_id=review.id) }}">
+        <div class="form-group">
+            <label for="reviews">Review: </label>
+            <textarea class="form-control" rows="5" name="reviews">{{ review.reviews }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="notes">Notes: </label>
+            <textarea class="form-control" rows="10" name="notes">{{ review.notes }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+{% endblock %}
