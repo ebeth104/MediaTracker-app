@@ -1,7 +1,9 @@
 # MediaTracker-app
+
 This is a Flask application that allows users to keep track of movies and TV shows they've watched, create reviews, and manage their watchlist.
 
 ## Features
+
 -**Display:** Displays popular, upcoming, airing and trending media.
 -**Search:** Can search for a specific media.
 -**User Authentication:** Securely sign up, log in, and log out.
