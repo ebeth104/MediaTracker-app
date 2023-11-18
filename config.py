@@ -4,9 +4,9 @@ class Config(object):
     DEBUG = False
     TESTING = False
     
-    SECRET_KEY = "#@$^dskv43423"
+    SECRET_KEY = "YOUR SECRET KEY"
     SESSION_COOKIE_SECURE = True
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://root:elib20#@localhost/mydatabase'
+    SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
     
 class ProductionConfig(Config):
     pass
