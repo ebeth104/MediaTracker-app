@@ -1,6 +1,6 @@
 import requests
 
-api_key = "da479dd5925e3ee4612d12363dd335fc"
+api_key = "YOUR API KEY"
 base_url = "https://api.themoviedb.org/3/{}"
 
 def get_by_category(category):
